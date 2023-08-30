@@ -37,7 +37,29 @@ namespace ProjectReviewManagement
             var result = list.Skip(5);
             Display(result.ToList());
         }
-
+         public void SkipTopRecords(List<Product> list)
+        {
+            var result = list.Skip(5);
+            Display(result.ToList());
+        }
+        public void AddDataToDataTable(List<Product> list)
+        {
+            table.Columns.Add("ProductId").DataType = typeof(Int32);
+            table.Columns.Add("UserId").DataType = typeof(Int32);
+            table.Columns.Add("Rating").DataType = typeof(Int32);
+            table.Columns.Add("Review").DataType = typeof(string);
+            table.Columns.Add("IsLike").DataType = typeof(bool);
+            foreach (var data in list)
+            {
+                table.Rows.Add(data.ProductID, data.UserID, data.Rating, data.Review, data.isLike);
+            }
+            foreach (var item in table.AsEnumerable())
+            {
+                Console.WriteLine(item.Field<int>("ProductId") + " " + item.Field<int>("UserID") 
+                    + " " + item.Field<int>("Rating") + " " + item.Field<string>("Review") + " " 
+                    + item.Field<bool>("isLike"));
+            }
+        }
         public void Display(List<Product> list)
         {
             foreach (var item in list)

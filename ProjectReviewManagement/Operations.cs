@@ -10,7 +10,7 @@ namespace ProjectReviewManagement
 {
     public class Operations
     {
-       DataTable table= new DataTable();
+      
         public void RetrieveTopRecords(List<Product> list)
         {
             var result = list.Where(x => x.Rating == 5).Take(3);
@@ -33,6 +33,11 @@ namespace ProjectReviewManagement
         }
 
         public void RetrieveProductIdAndReview(List<Product> list)
+        {
+            var result = list.Skip(5);
+            Display(result.ToList());
+        }
+        public void SkipTopRecords(List<Product> list)
         {
             var result = list.Skip(5);
             Display(result.ToList());

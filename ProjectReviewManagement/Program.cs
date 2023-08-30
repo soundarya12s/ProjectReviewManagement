@@ -127,6 +127,11 @@ namespace ProjectReviewManagement
                 Review = "Avg",
                 isLike = false
             });
+
+             //operations.RetrieveTopRecords(list);
+            //operations.Display(list);
+            //operations.RetrieveAllRecordsWithCondition(list);
+            operations.UsingGroupBy(list);
         }
     }
 }

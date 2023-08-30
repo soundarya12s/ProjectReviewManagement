@@ -133,8 +133,8 @@ namespace ProjectReviewManagement
             //operations.Display(list);
             //operations.RetrieveAllRecordsWithCondition(list);
             //operations.UsingGroupBy(list);
-            //operations.RetrieveProductIdAndReview(list);
-            operations.SkipTopRecords(list);
+            operations.RetrieveProductIdAndReview(list);
+            //operations.SkipTopRecords(list);
         }
     }
 }

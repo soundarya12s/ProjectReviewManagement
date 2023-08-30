@@ -5,6 +5,7 @@ namespace ProjectReviewManagement
     {
         static void Main(string[] args)
         {
+            Operations op = new Operations();
             List<Product> list= new List<Product>();
             list.Add(new Product()
             {
@@ -127,6 +128,10 @@ namespace ProjectReviewManagement
                 Review = "Avg",
                 isLike = false
             });
+
+            op.RetrieveTopRecords(list);
+            op.RetrieveAllRecordsWithCondition(list);
+            
         }
     }
 }

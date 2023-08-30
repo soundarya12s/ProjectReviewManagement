@@ -37,7 +37,11 @@ namespace ProjectReviewManagement
             var result = list.Skip(5);
             Display(result.ToList());
         }
-
+         public void SkipTopRecords(List<Product> list)
+         {
+            var result = list.Skip(5);
+            Display(result.ToList());
+         }
         public void Display(List<Product> list)
         {
             foreach (var item in list)

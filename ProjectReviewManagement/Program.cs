@@ -128,9 +128,9 @@ namespace ProjectReviewManagement
                 isLike = false
             });
 
-             //operations.RetrieveTopRecords(list);
+            //operations.RetrieveTopRecords(list);
             //operations.Display(list);
-            //operations.RetrieveAllRecordsWithCondition(list);
+            
             operations.UsingGroupBy(list);
         }
     }

@@ -10,7 +10,6 @@ namespace ProjectReviewManagement
 {
     public class Operations
     {
-       DataTable table= new DataTable();
         public void RetrieveTopRecords(List<Product> list)
         {
             var result = list.Where(x => x.Rating == 5).Take(3);

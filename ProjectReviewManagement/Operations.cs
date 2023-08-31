@@ -38,6 +38,33 @@ namespace ProjectReviewManagement
             Display(result.ToList());
         }
 
+         public void RetrieveRecordsFromDataTable()
+        {
+            var result = table.AsEnumerable().Where(x => x.Field<bool>("isLike").Equals(true));
+            foreach(var item in result.AsEnumerable())
+            {
+                Console.WriteLine(item.Field<int>("ProductId"));
+            }
+        }
+
+        public void AvgRating(List<Product> list)
+        {
+            var result = list.Average(x => x.Rating);
+            Console.WriteLine(result);
+        }
+
+        public void RetreieUsingReview(List<Product> list)
+        {
+            var result = list.Where(x => x.Review.Equals("Good"));
+            Display(result.ToList());
+        }
+
+        public void RetreiveUsingRating(List<Product> list)
+        {
+            var result = list.Where(x => x.UserID.Equals(10)).OrderBy(x => x.Rating);
+            Display(result.ToList());
+        }
+
         public void Display(List<Product> list)
         {
             foreach (var item in list)
